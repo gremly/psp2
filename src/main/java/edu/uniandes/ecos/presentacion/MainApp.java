@@ -18,8 +18,8 @@ import edu.uniandes.ecos.logica.Controller;
 import edu.uniandes.ecos.logica.Operator;
 
 /**
- *Clase principal del programa
- *
+ * Clase principal del programa
+ * @author Oscar Javier Moreno Rey
  */
 public class MainApp extends HttpServlet{
 	

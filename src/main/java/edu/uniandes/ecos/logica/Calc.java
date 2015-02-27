@@ -3,14 +3,13 @@ package edu.uniandes.ecos.logica;
 /**
  * Clase encargada de realizar los cálculos matemáticos
  * @author Oscar Javier Moreno Rey
- *
- */
+ * */
 public class Calc {
 
 	/**
-	 * 
-	 * @param varX
-	 * @return
+	 * Calcula la función Gamma .
+	 * @param varX Valor para el cual se calculará la función gamma.
+	 * @return double con el resultado de aplicar la función gamma a varX.
 	 */
 	public double calculateGamma(double varX) {
 		double gamma;
@@ -41,7 +40,7 @@ public class Calc {
 	/**
 	 * Calcula el factorial de un número dado.
 	 * @param num Número entero para calcular el factorial.
-	 * @return número entero que es el factorial de num.
+	 * @return Número entero como resultado del factorial de num.
 	 */
 	public double calculateFactorial(double num) {
 		if	(num == 0) 
@@ -51,10 +50,10 @@ public class Calc {
 	}
 
 	/**
-	 * 
-	 * @param varX
-	 * @param dof
-	 * @return
+	 * Define la función T, para ser evaluada.
+	 * @param varX Punto del eje X donde se desea evaluar la función.
+	 * @param dof Grados de libertad.
+	 * @return Valor correspondiente a la imagen de varX.
 	 */
 	public double calculateTFunction(double varX, int dof) {
 		
@@ -75,12 +74,12 @@ public class Calc {
 	}
 
 	/**
-	 * 
-	 * @param varX
-	 * @param dof
-	 * @param segments
-	 * @param error
-	 * @return
+	 * Lleva a cabo la integración de la función T usando el método de Simpson, tomando
+	 * como límite inferior en x=0.
+	 * @param varX Límite superior para evaluar la integral.
+	 * @param dof Grados de libertad.
+	 * @param segments Número de divisiones a realizar para sumar el área.
+	 * @return Valor del área bajo la curva obtenido por el método Simpson.
 	 */
 	public double computeSimpsonRule(double varX, int dof, int segments) {
 		double w = varX/segments;
@@ -96,13 +95,14 @@ public class Calc {
 	}
 
 	/**
-	 * 
-	 * @param varX
-	 * @param dof
-	 * @param segments
-	 * @param error
-	 * @param iterations
-	 * @return
+	 * Lleva a cabo varios cálculos de la integral para definir el mejor resultado,
+	 * tomando como referencia el porcentaje de error permitido.
+	 * @param varX Límite superior para evaluar la integral.
+	 * @param dof Grados de libertad
+	 *  @param segments Número de divisiones a realizar para sumar el área.
+	 * @param error Porcentaje de error permitido para las iteraciones.
+	 * @param iterations Cantidad de iteraciónes para comparar los resultados de la integral.
+	 * @return Valor del área escogido como mejor aproximación, basándose en el límite permitido.
 	 */
 	public double iterateWithSimpson(double varX, int dof, int segments, double error, int iterations) {
 		double choosen = 0;

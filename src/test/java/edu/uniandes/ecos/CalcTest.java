@@ -10,7 +10,7 @@ import junit.framework.TestCase;
 public class CalcTest extends TestCase {
 
 	/**
-	 * 
+	 * Prueba el primer caso para gama cuando x = 1
 	 */
 	public void testCalculateGammaOne(){
 		Calc calculator = new Calc();
@@ -18,7 +18,7 @@ public class CalcTest extends TestCase {
 	}
 	
 	/**
-	 * 
+	 * Prueba el segundo caso para gama cuando x = 1/2
 	 */
    public void testCalculateGammaMid(){
 	   double x = 1.0/2;
@@ -27,7 +27,7 @@ public class CalcTest extends TestCase {
 	}
    
    /**
-	 * 
+	 * Prueba el caso para gamma cuando x es un fraccionario.
 	 */
   public void testCalculateGammaMidNine(){
 	   double x = 9.0/2;
@@ -37,7 +37,7 @@ public class CalcTest extends TestCase {
   
    
    /**
-    * 
+    * Prueba el caso para gamma cuando x es un entero.
     */
    public void testCalculateGammaOther(){
 	   Calc calculator = new Calc();
@@ -45,7 +45,7 @@ public class CalcTest extends TestCase {
 	}
    
    /**
-    * 
+    * Prueba la evaluación de la funcion T.
     */
    public void testCalculateTFunction(){
 	   Calc calculator = new Calc();
@@ -53,7 +53,7 @@ public class CalcTest extends TestCase {
    }
    
    /**
-    * 
+    * Prueba la correcta ejecución de la regla de Simpson.
     */
    public void testComputeSimpsonRule(){
 	   Calc calculator = new Calc();
@@ -61,7 +61,7 @@ public class CalcTest extends TestCase {
    }
    
    /**
-    * 
+    * Prueba el procedimiento de integrar con varias iteraciones.
     */
    public void testIterateWithSimpson(){
 	   Calc calculator = new Calc();
