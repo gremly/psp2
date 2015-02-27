@@ -15,41 +15,35 @@ public class Calc {
 	public double calculateGamma(double varX) {
 		double gamma;
 		
-		if (varX == 1.0/2){
+		if (varX == 1){
+			return 1;
+			
+		} else if (varX % 1 == 0){
+			gamma = this.calculateFactorial(varX - 1);
+		} else if (varX == 1.0/2){
 			gamma = Math.sqrt(Math.PI);
 			
 		} else {
 			gamma = 1;
 			int i = (int)(varX*2 -2);
-			
 			while (i > 0){
 				gamma *= i/2.0; 
 				i -= 2;
 			}
 			gamma = gamma * Math.sqrt(Math.PI);
+
 		}
 		
 		return gamma;
 	}
 	
-	/**
-	 * 
-	 * @param varX
-	 * @return
-	 */
-	public int calculateGamma(int varX){
-		if (varX == 1){
-			return 1;
-		}
-		return this.calculateFactorial(varX - 1);
-	}
 
 	/**
 	 * Calcula el factorial de un número dado.
 	 * @param num Número entero para calcular el factorial.
 	 * @return número entero que es el factorial de num.
 	 */
-	public int calculateFactorial(int num) {
+	public double calculateFactorial(double num) {
 		if	(num == 0) 
 			return 1;
 		
@@ -64,30 +58,19 @@ public class Calc {
 	 */
 	public double calculateTFunction(double varX, int dof) {
 		
-
 		double numerator;
 		double denominator;
 		double factor;
 		
 		double numParam = (dof+1)/2.0;
-		
-		if ( numParam % 1 == 0){
-			numerator = this.calculateGamma((int) numParam);
-		} else {
-			numerator = this.calculateGamma(numParam);	
-		}
+    	numerator = this.calculateGamma(numParam);
 		
 		double denParam = dof/2.0;
-		
-		if ( denParam % 1 == 0){
-			denominator = this.calculateGamma((int) denParam);
-		} else {
-			denominator = this.calculateGamma(denParam);	
-		}
+		denominator = this.calculateGamma(denParam);
 		
 		denominator *= Math.sqrt(dof * Math.PI); 
 		factor = 1.0/Math.sqrt(Math.pow(1+ Math.pow(varX,  2)/dof , dof +1 ));
-		 				
+        
 		return (numerator / denominator) * factor ;
 	}
 
@@ -104,7 +87,7 @@ public class Calc {
 		double result;
 		
 		result = (w/3) * this.calculateTFunction(0, dof);
-		
+
 		for (int i = 1; i < segments; i++) {
 			result += (w/3) * this.calculateTFunction(i*w, dof) * ( i % 2 == 0 ? 2 : 4);
 		}
