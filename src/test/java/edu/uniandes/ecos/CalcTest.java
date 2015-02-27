@@ -14,7 +14,7 @@ public class CalcTest extends TestCase {
 	 */
 	public void testCalculateGammaOne(){
 		Calc calculator = new Calc();
-		assertEquals(1, calculator.calculateGamma(1));
+		assertEquals(1.0, calculator.calculateGamma(1));
 	}
 	
 	/**
